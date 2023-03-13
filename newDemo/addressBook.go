@@ -111,4 +111,5 @@ func main() {
 	myFriendsObj.AddFriend(Friend8)
 	myFriendsObj.AddFriend(Friend9)
 	myFriendsObj.AddFriend(Friend10)
+
 }
