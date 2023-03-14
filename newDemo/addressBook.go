@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type MyFriends struct {
 	name                  string
 	MobileNumber          int
@@ -14,8 +16,19 @@ type friend struct {
 }
 
 func (Myobj *friend) AddFriend(obj MyFriends) {
-
-	Myobj.addressbook = append(Myobj.addressbook, obj)
+	value := func(myobj []MyFriends, obj MyFriends) bool {
+		for _, val := range myobj {
+			if val == obj {
+				return false
+			}
+		}
+		return true
+	}
+	if value(Myobj.addressbook, obj) {
+		Myobj.addressbook = append(Myobj.addressbook, obj)
+	} else {
+		fmt.Println("Duplicate Entry........")
+	}
 }
 
 func main() {
